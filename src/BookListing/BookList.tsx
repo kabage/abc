@@ -19,7 +19,7 @@ class BookList extends React.Component<any, any> {
     const { listingObj, authorName } = this.props;
     const imageEndPoint = "https://bookapi.eitbyt.com/images?";
     let bookItemsCarousel = [];
-    for (let bookObjList of this.chunkList(listingObj, 4)) {
+    for (let bookObjList of this.chunkList(listingObj, 3)) {
       let bookRow = bookObjList.map((bookObj: any) => {
         return (
           <a className="col" href={bookObj.scribdLink}>
@@ -62,6 +62,20 @@ class BookList extends React.Component<any, any> {
           indicators={false}
           wrap={false}
           variant="dark"
+          nextIcon={
+            <span
+              aria-hidden="true"
+              className="carousel-control-next-icon"
+              style={{ height: "20px" }}
+            />
+          }
+          prevIcon={
+            <span
+              aria-hidden="true"
+              className="carousel-control-prev-icon"
+              style={{ height: "20px" }}
+            />
+          }
         >
           {bookItemsCarousel}
         </Carousel>

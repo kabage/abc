@@ -1,9 +1,8 @@
 .App {
-  /* text-align: left; */
-  /* font-size: 10px; */
-  height: 600px;
-  border-radius: '15px';
-  /* background-color: #282c34; */
+  height: "600px";
+  /* width: "500px"; */
+  /* border-radius: '15px'; */
+  background-color: #f5f7fc;
 }
 
 .App-logo {
@@ -32,7 +31,7 @@
   color: #61dafb;
 }
 ::-webkit-scrollbar {
-  width: 13px;
+  width: 0px;
   height: 13px;
   color: #1e7b85;
 }
@@ -92,4 +91,20 @@ hr {
   text-align: center;
   background-color: #e9edf8;
   box-sizing: border-box;
+}
+
+.read-more-enter {
+  transform: rotate(45deg)
+}
+.read-more-enter-active {
+  transform: rotate(45deg);
+  /* transition:  400ms; */
+}
+.read-more-exit {
+  transform: rotate(45deg);
+  /* transition:  400ms; */
+}
+.read-more-exit-active {
+  transform: rotate(45deg);
+  /* transition:  400ms; */
 }
