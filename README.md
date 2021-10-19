@@ -1,46 +1,36 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Getting Started.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Example books.(Ideal)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. https://www.scribd.com/book/373570950/Poetic-Encounter-Rhapsodies-from-the-South
+2. https://www.scribd.com/book/237138925/University-Crisis-and-Student-Protests-in-Africa
+3. https://www.scribd.com/book/344289838/Magnum-Opus-A-Tribute-to-Ntarikon
+4. https://www.scribd.com/book/295495231/Land-in-the-Struggles-for-Citizenship-in-Africa
+5. https://www.scribd.com/book/330781617/
+6. https://www.scribd.com/book/358625665/Living-With-Xenophobia-Zimbabwean-Informal-Enterprise-in-South-Africa
+7. https://www.scribd.com/book/499697303/Nul-n-a-le-monopole-du-francais-Deux-poetes-du-Cameroon-anglophone
+8. https://www.scribd.com/book/385144268/The-PLO-Critical-appraisals-from-the-inside
+9. https://www.scribd.com/book/308429588/Election-Management-Bodies-in-East-Africa
+10. https://www.scribd.com/book/434668422/Mobile-Africa-Human-Trafficking-and-the-Digital-Divide
+11. https://www.scribd.com/book/237138925/University-Crisis-and-Student-Protests-in-Africa
+12. https://www.scribd.com/book/258958067/Farming-Ashes-Tales-of-Agony-and-Resilience
+13. https://www.scribd.com/book/258957374/Post-War-Regimes-and-State-Reconstruction-in-Liberia-and-Sierra-Leone
+14. https://www.scribd.com/book/463573610/Traditional-Leaders-in-a-Democracy-Resources-Respect-and-Resistance
+15. https://www.scribd.com/book/258957044/Their-Champagne-Party-Will-End-Poems-in-Honor-of-Bate-Besong-Poems-in-Honor-of-Bate-Besong
+16. https://www.scribd.com/book/467827567/Mazambuko
+17. https://www.scribd.com/book/396364343/Research-Universities-in-Africa
+18. https://www.scribd.com/book/425447253/Getting-Africa-Out-of-the-Dungeon-Human-Rights-Federalism-and-Judicial-Politics-in-Cameroon
+19. https://www.scribd.com/book/289957823/The-Role-of-Social-Work-in-Poverty-Reduction-and-Realization-of-MDGs-in-Kenya
+20. https://www.scribd.com/book/269096019/Changing-Trends-in-Mental-Health-Care-and-Research-in-Ghana
+21. https://www.scribd.com/book/373570950/Poetic-Encounter-Rhapsodies-from-the-South
+22. https://www.scribd.com/book/245137236/Snapshots-An-X-ray-of-Cameroon-s-Democracy-Governance-and-Unification
+23. https://www.scribd.com/book/326156797/A-Giant-Tree-has-Fallen
+24. https://www.scribd.com/book/258956207/Nomenclatural-Poetization-and-Globalization
+25. https://www.scribd.com/book/237139169/Translating-Growth-into-Poverty-Reduction-Beyond-the-Numbers
+26. https://www.scribd.com/book/245135869/Pan-Africanism-or-Pragmatism-Lessons-of-the-Tanganyika-Zanzibar-Union
+27. https://www.scribd.com/book/237139060/The-Hard-Road-to-Reform-The-Politics-of-Zimbabwe-s-Global-Political-Agreement
+28. https://www.scribd.com/book/258956599/Textures
+29. https://www.scribd.com/book/269096028/Current-Perspectives-in-the-Archaeology-of-Ghana
+30. https://www.scribd.com/book/349237483/Trails-in-Academic-and-Administrative-Leadership-in-Kenya

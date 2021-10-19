@@ -1,5 +1,7 @@
 .App {
-  text-align: center;
+  height: "600px";
+  background-color: #e0e6f5;
+  
 }
 
 .App-logo {
@@ -20,12 +22,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(8px + 2vmin);
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  height: 13px;
+  color: #1e7b85;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +42,52 @@
   to {
     transform: rotate(360deg);
   }
+}
+.profile-header-img {
+  padding: 4px;
+}
+.profile-header-img > img.img-circle {
+  width: 72px;
+  height: 72px;
+}
+.book-listing{
+  width: 80px;
+  padding-left: 4px;
+  padding-top: 4px;
+  border: 4px;
+}
+
+hr {
+  display: block;
+  unicode-bidi: isolate;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 1px;
+} 
+::selection {
+  color:#1e7b85; /* WebKit/Blink Browsers */
+}
+.container-fluid{
+  justify-content:left
+}
+.altProfileImage{
+  border-radius: 50%;
+  height: 72px;
+  line-height: 72px;
+  min-width: 72px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.profileInitials{
+  color: #57617a;
+  display: inline-block;
+  font-size: 16px;
+  overflow: hidden;
+  text-align: center;
+  background-color: #e9edf8;
+  box-sizing: border-box;
 }
