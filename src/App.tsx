@@ -186,11 +186,6 @@ export default function App() {
                 fontSize: "small",
                 textAlign: "center",
                 paddingBottom: "4px",
-<<<<<<< HEAD
-              }}
-            >
-              {idx + 1}
-=======
                 display: "flex",
                 justifyContent: "center",
               }}
@@ -198,7 +193,6 @@ export default function App() {
               <div style={{}} className="circle-page">
                 {idx + 1}
               </div>
->>>>>>> AuthorLayout
             </div>
           </Card>
         </div>
