@@ -1,8 +1,7 @@
 .App {
   height: "600px";
-  /* width: "500px"; */
-  /* border-radius: '15px'; */
-  background-color: #f5f7fc;
+  background-color: #e0e6f5;
+  
 }
 
 .App-logo {
@@ -91,20 +90,4 @@ hr {
   text-align: center;
   background-color: #e9edf8;
   box-sizing: border-box;
-}
-
-.read-more-enter {
-  transform: rotate(45deg)
-}
-.read-more-enter-active {
-  transform: rotate(45deg);
-  /* transition:  400ms; */
-}
-.read-more-exit {
-  transform: rotate(45deg);
-  /* transition:  400ms; */
-}
-.read-more-exit-active {
-  transform: rotate(45deg);
-  /* transition:  400ms; */
 }

@@ -10,7 +10,7 @@ import Badge from "react-bootstrap/Badge";
 import BookList from "./BookListing/BookList";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import { Popover } from "react-bootstrap";
-import CSSTransition from "react-transition-group/CSSTransition";
+import Loader from "react-loader-spinner";
 function setAuthorDefaults(authorImprovements: Array<any>) {
   if (!authorImprovements) return null;
   for (let authorImprovement of authorImprovements) {
@@ -67,7 +67,7 @@ function getDescriptionTextColor(authorObj: any) {
   }
 }
 export default function App() {
-  const [bookImprovements, setBookImprovements] = React.useState<any>();
+  const [bookImprovements, setBookImprovements] = React.useState<any>({});
   const [expanded, setExpanded] = React.useState<any>({});
   const [inProp, setInProp] = React.useState(false);
 
@@ -88,10 +88,12 @@ export default function App() {
       return (
         <div>
           <Card
+            className="border-light"
             style={{
               marginLeft: "12px",
               marginRight: "12px",
               marginBottom: "8px",
+              paddingBottom: "2px",
             }}
           >
             <Card.Body>
@@ -122,15 +124,6 @@ export default function App() {
               {authorObj.author_description ? (
                 <div>
                   <hr />
-
-                  <CSSTransition
-                    in={inProp}
-                    timeout={300}
-                    classNames="read-more"
-                  >
-                    <div>{}</div>
-                  </CSSTransition>
-
                   {authorObj.author_description.length > 300 ? (
                     <Button
                       style={{
@@ -151,11 +144,7 @@ export default function App() {
                       aria-controls={authorObj.author_name}
                       aria-expanded={expanded[authorObj.author_name]}
                     >
-                      <ChevronRight
-                        className="read-more"
-                        id={authorObj.author_name}
-                        style={{ transform: "rotate(90deg)" }}
-                      />
+                      <ChevronRight id={authorObj.author_name} />
                     </Button>
                   ) : null}
                   <Collapse in={expanded[authorObj.author_name]}>
@@ -217,45 +206,44 @@ export default function App() {
   );
   return (
     <div>
-      {bookImprovements ? (
+      {Object.keys(bookImprovements).length > 0 ? (
         <div className="App">
-          <div
-            className="shadow-sm p-2 mb-1 bg-white "
+          <Card
+            className="border-light"
             style={{
-              paddingTop: "4px",
-              paddingBottom: "8px",
               textAlign: "center",
               fontSize: "16px",
-              marginBottom: "4px",
+              marginBottom: "8px",
               marginRight: "12px",
               marginLeft: "12px",
             }}
           >
-            <OverlayTrigger
-              placement="bottom"
-              delay={{ show: 250, hide: 400 }}
-              overlay={popover}
-            >
-              <Badge
-                style={{
-                  float: "right",
-                  marginTop: "3px",
-
-                  marginLeft: "8px",
-                }}
-                pill
-                bg="success"
+            <Card.Body>
+              <OverlayTrigger
+                placement="bottom"
+                delay={{ show: 250, hide: 400 }}
+                overlay={popover}
               >
-                {bookImprovements.author_improvements_count}
-              </Badge>
-            </OverlayTrigger>
+                <Badge
+                  style={{
+                    float: "right",
+                    marginTop: "3px",
+                    marginLeft: "8px",
+                  }}
+                  pill
+                  bg="success"
+                >
+                  {bookImprovements.author_improvements_count}
+                </Badge>
+              </OverlayTrigger>
+              <Card.Text>{bookImprovements.scribd_book_title}</Card.Text>
+            </Card.Body>
+          </Card>
 
-            {bookImprovements.scribd_book_title}
-          </div>
           <div
             style={{
               marginLeft: "0px",
-              height: "550px",
+              height: "500px",
               overflowY: "scroll",
               scrollBehavior: "smooth",
             }}
@@ -264,7 +252,24 @@ export default function App() {
           </div>
         </div>
       ) : (
-        <div>No improvements</div>
+        <div
+          style={{
+            backgroundColor: "#f5f7fc",
+            height: "600px",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <div style={{ position: "absolute", top: "50%" }}>
+            <Loader
+              type="ThreeDots"
+              color="#1e7b85"
+              height={50}
+              width={50}
+              timeout={8000}
+            />
+          </div>
+        </div>
       )}
     </div>
   );
