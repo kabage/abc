@@ -186,9 +186,19 @@ export default function App() {
                 fontSize: "small",
                 textAlign: "center",
                 paddingBottom: "4px",
+<<<<<<< HEAD
               }}
             >
               {idx + 1}
+=======
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <div style={{}} className="circle-page">
+                {idx + 1}
+              </div>
+>>>>>>> AuthorLayout
             </div>
           </Card>
         </div>
@@ -216,6 +226,7 @@ export default function App() {
               marginBottom: "8px",
               marginRight: "12px",
               marginLeft: "12px",
+              backgroundColor: "#1e7b85",
             }}
           >
             <Card.Body>
@@ -229,14 +240,17 @@ export default function App() {
                     float: "right",
                     marginTop: "3px",
                     marginLeft: "8px",
+                    color: "#1e7b85",
                   }}
                   pill
-                  bg="success"
+                  bg="light"
                 >
                   {bookImprovements.author_improvements_count}
                 </Badge>
               </OverlayTrigger>
-              <Card.Text>{bookImprovements.scribd_book_title}</Card.Text>
+              <Card.Text style={{ padding: "0px", color: "#fff" }}>
+                {bookImprovements.scribd_book_title}
+              </Card.Text>
             </Card.Body>
           </Card>
 
