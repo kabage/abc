@@ -1,16 +1,14 @@
-import React from "react";
-import "./App.css";
 import axios from "axios";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import Collapse from "react-bootstrap/Collapse";
-import { ChevronRight } from "react-bootstrap-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Badge from "react-bootstrap/Badge";
-import BookList from "./BookListing/BookList";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import React from "react";
 import { Popover } from "react-bootstrap";
+import Badge from "react-bootstrap/Badge";
+import Card from "react-bootstrap/Card";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Loader from "react-loader-spinner";
+import "./App.css";
+import AuthorCard from "./components/authorCard";
+
 function setAuthorDefaults(authorImprovements: Array<any>) {
   if (!authorImprovements) return null;
   for (let authorImprovement of authorImprovements) {
@@ -29,10 +27,7 @@ function setAuthorDefaults(authorImprovements: Array<any>) {
   }
   return authorImprovements;
 }
-function getAuthorNameSlug(authorName: string) {
-  let tokens = authorName.split(" ");
-  return `${tokens[0][0]}${tokens[1][0] || ""}`;
-}
+
 async function getBookImprovements(setBookImprovements: any) {
   let tabs: any = [];
   try {
@@ -56,22 +51,10 @@ async function getBookImprovements(setBookImprovements: any) {
     setBookImprovements({});
   }
 }
-function getDescriptionTextColor(authorObj: any) {
-  if (
-    authorObj.author_description_improvement ||
-    authorObj.authors_missing_improvement
-  ) {
-    return "";
-  } else {
-    return "text-muted";
-  }
-}
+
 export default function App() {
   const [bookImprovements, setBookImprovements] = React.useState<any>({});
-  const [expanded, setExpanded] = React.useState<any>({});
-  const [inProp, setInProp] = React.useState(false);
 
-  const imageEndPoint = "https://bookapi.eitbyt.com/images?";
   React.useEffect(() => {
     getBookImprovements(setBookImprovements);
   }, []);
@@ -87,114 +70,7 @@ export default function App() {
     authorCards = bookData.map((authorObj: any, idx: number) => {
       return (
         <div>
-          <Card
-            className="border-light"
-            style={{
-              marginLeft: "12px",
-              marginRight: "12px",
-              marginBottom: "8px",
-              paddingBottom: "2px",
-            }}
-          >
-            <Card.Body>
-              <div className="profile-header-img float-left">
-                {authorObj.author_image_improvement ||
-                (authorObj.authors_missing_improvement &&
-                  authorObj.author_image) ? (
-                  <img
-                    className="img-circle rounded-circle float-left"
-                    src={imageEndPoint + authorObj.author_image}
-                    alt={"NA"}
-                  />
-                ) : (
-                  <div className="altProfileImage profileInitials">
-                    <span>{getAuthorNameSlug(authorObj.author_name)}</span>
-                  </div>
-                )}
-                <Card.Text
-                  style={{
-                    fontFamily: "Source Sans Pro,serif",
-                    maxHeight: "81px",
-                    color: "#1e7b85",
-                  }}
-                >
-                  {authorObj.author_name}
-                </Card.Text>
-              </div>
-              {authorObj.author_description ? (
-                <div>
-                  <hr />
-                  {authorObj.author_description.length > 300 ? (
-                    <Button
-                      style={{
-                        height: "30px",
-                        width: "30px",
-                        textAlign: "center",
-                        marginBottom: "4px",
-                      }}
-                      className="rounded-circle btn-light border-0 shadow-none"
-                      onClick={() => {
-                        setExpanded((expanded: any) => ({
-                          ...expanded,
-                          [authorObj.author_name]:
-                            !expanded[authorObj.author_name],
-                        }));
-                        setInProp(!inProp);
-                      }}
-                      aria-controls={authorObj.author_name}
-                      aria-expanded={expanded[authorObj.author_name]}
-                    >
-                      <ChevronRight id={authorObj.author_name} />
-                    </Button>
-                  ) : null}
-                  <Collapse in={expanded[authorObj.author_name]}>
-                    <Card.Text
-                      id={authorObj.author_name}
-                      className={getDescriptionTextColor(authorObj)}
-                      style={{ fontSize: "small" }}
-                    >
-                      {authorObj.author_description}
-                    </Card.Text>
-                  </Collapse>
-                  {!expanded[authorObj.author_name] ? (
-                    <Card.Text
-                      id={authorObj.author_name}
-                      className={getDescriptionTextColor(authorObj)}
-                      style={{ fontSize: "small" }}
-                    >
-                      {authorObj.author_description.length > 300 ? (
-                        <div>
-                          {authorObj.author_description.substring(0, 300) +
-                            "..."}
-                        </div>
-                      ) : (
-                        <div>{authorObj.author_description}</div>
-                      )}
-                    </Card.Text>
-                  ) : null}
-                </div>
-              ) : null}
-              {authorObj.author_book_listing_improvement ? (
-                <BookList
-                  listingObj={authorObj.author_book_listing}
-                  authorName={authorObj.author_name}
-                ></BookList>
-              ) : null}
-            </Card.Body>
-            <div
-              style={{
-                fontSize: "small",
-                textAlign: "center",
-                paddingBottom: "4px",
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <div style={{}} className="circle-page">
-                {idx + 1}
-              </div>
-            </div>
-          </Card>
+          <AuthorCard authorObj={authorObj} />
         </div>
       );
     });

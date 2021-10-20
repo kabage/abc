@@ -11,7 +11,7 @@ export default function BookCarousel({ books, authorName }: BookCarouselProps) {
     <div>
       <Card.Text>Read more from {authorName}</Card.Text>
       {books && (
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", overflow: "auto" }}>
           {books.map((book) => (
             <Book bookObj={book} />
           ))}

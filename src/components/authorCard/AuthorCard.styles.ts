@@ -7,7 +7,7 @@ const cardStyle = {
   marginRight: 12,
   marginBottom: 8,
   paddingBottom: 2,
-  maxWidth: 780,
+  maxWidth: 400,
 };
 
 export default function getStyles(): StyleType {

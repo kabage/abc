@@ -20,14 +20,12 @@ type AuthorType = {
 
 export type AuthorCardPropType = {
   authorObj: Partial<AuthorType>;
-  idx: number;
 };
 
 const imageEndPoint = "https://bookapi.eitbyt.com/images?";
 
 export default function AuthorCard({
   authorObj,
-  idx,
 }: AuthorCardPropType): React.ReactElement {
   const [expanded, setExpanded] = React.useState(false);
 
@@ -70,7 +68,7 @@ export default function AuthorCard({
               />
             ) : (
               <div className="altProfileImage profileInitials">
-                <span>{getAuthorNameSlug(authorObj.author_name)}</span>
+                <span>{getAuthorNameSlug(authorObj.author_name || "")}</span>
               </div>
             )}
             <div style={{ marginLeft: 24 }}>
@@ -80,11 +78,10 @@ export default function AuthorCard({
           </div>
         </div>
         {authorObj.author_description ? (
-          <div>
+          <div style={{ marginBottom: 24 }}>
             <Card.Text
               id={authorObj.author_name}
               className={getDescriptionTextColor(authorObj)}
-              style={{ fontSize: "small" }}
             >
               <ShowMoreText
                 /* Default options */
