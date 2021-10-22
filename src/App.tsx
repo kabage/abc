@@ -8,7 +8,6 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Loader from "react-loader-spinner";
 import "./App.css";
 import AuthorCard from "./components/authorCard";
-
 function setAuthorDefaults(authorImprovements: Array<any>) {
   if (!authorImprovements) return null;
   for (let authorImprovement of authorImprovements) {

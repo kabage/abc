@@ -72,22 +72,26 @@ export default function AuthorCard({
               </div>
             )}
             <div style={{ marginLeft: 24 }}>
-              <Card.Title>{authorObj.author_name}</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Author</Card.Subtitle>
+              <Card.Title style={{fontSize: "16px"}}>{authorObj.author_name}</Card.Title>
+              <Card.Subtitle style={{fontSize: "16px"}} className="mb-2 text-muted">
+                Contributor
+              </Card.Subtitle>
             </div>
           </div>
         </div>
         {authorObj.author_description ? (
           <div style={{ marginBottom: 24 }}>
+            <hr />
             <Card.Text
+              style={{fontSize: "15px",fontFamily:"Source Sans Pro,serif"}}
               id={authorObj.author_name}
               className={getDescriptionTextColor(authorObj)}
             >
               <ShowMoreText
                 /* Default options */
                 lines={2}
-                more="Show more"
-                less="Show less"
+                more={<div style={styles.showMoreStyle} className="pill_button_visible">show more</div>}
+                less={<div style={styles.showMoreStyle} className="pill_button_visible">show less</div>}
                 className="content-css"
                 anchorClass="my-anchor-css-class"
                 onClick={() => setExpanded(!expanded)}

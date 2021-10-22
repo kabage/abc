@@ -1,5 +1,6 @@
 type StyleType = {
   cardStyle: object;
+  showMoreStyle: object;
 };
 
 const cardStyle = {
@@ -10,6 +11,9 @@ const cardStyle = {
   maxWidth: 400,
 };
 
+const showMoreStyle={
+  color: "#1e7b85"
+}
 export default function getStyles(): StyleType {
-  return { cardStyle };
+  return { cardStyle, showMoreStyle };
 }
